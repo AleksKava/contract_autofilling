@@ -1,5 +1,5 @@
-## contract_autofilling
-# Importing excel data to word template with python
+# contract_autofilling
+## Importing excel data to word template with python
 
 This program was created to simplify the filling of standard agreements.
 The user fills in a table in an Excel file “Data”. At the same time, he has the opportunity to choose from two different executors. After running the CAF.exe file, the program automatically generates an agreement with the necessary information entered into it, and also adjusts the content of the agreement depending on the executor selected by the user.
