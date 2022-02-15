@@ -5,9 +5,12 @@ This program was created to simplify the filling of standard agreements.
 
 The user fills in a table in an excel file “Data”. At the same time, he has the opportunity to choose from two different executors. After running the CAF.exe file, the program automatically generates an agreement with the necessary information entered into it, and also adjusts the content of the agreement depending on the executor selected by the user.
 
-Together with the agreement, the program creates a new excel file “Contract data”, which is then used by another program when forming expert conclusions on the basis of the agreement created by this program. Both files, the word "Agreement" and the excel “Contract data” are saved in a folder specially created for it.
+Together with the agreement, the program creates a new excel file “Contract data”, which is then used by another program when forming expert conclusions on the basis of the agreement created by this program. Both files, the word "Contract" and the excel “Contract data” are saved in a folder specially created for it.
 
 The user has also an option to select or cancel the sound notification at the end of the program execution.
+
+Sound effects files are located in the folder System\Sounds.
+The contract template is located in the folder System\Template.
 
 While creating the program, the following functions and modules taken from other sources were used:
 - to write the number in words
