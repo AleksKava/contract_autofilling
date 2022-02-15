@@ -10,6 +10,7 @@ Together with the agreement, the program creates a new excel file “Contract da
 The user has also an option to select or cancel the sound notification at the end of the program execution.
 
 Sound effects files are located in the folder System\Sounds.
+
 The contract template is located in the folder System\Template.
 
 While creating the program, the following functions and modules taken from other sources were used:
