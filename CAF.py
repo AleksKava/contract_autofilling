@@ -23,14 +23,17 @@ from pygame import mixer
 # In[ ]:
 
 
-from IPython.core.display import display, HTML
-display(HTML("<style>.container { width:100% !important; }</style>"))
+# from IPython.core.display import display, HTML
+# display(HTML("<style>.container { width:100% !important; }</style>"))
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+pd.options.mode.chained_assignment = None  # default='warn'
 
 
 # In[ ]:
 
 
-print('Выполняется создание договора...')
+print('Contract is being created...')
 
 
 # ## Create all the necessary functions
@@ -177,7 +180,7 @@ try:
         
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось загрузить файл "Data": \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to upload file "Data": \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -191,7 +194,7 @@ try:
 
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось загрузить шаблон договора: \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to upload Contract template: \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -262,7 +265,7 @@ try:
     
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось создать файл "Contract": \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to create file "Contract": \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -279,7 +282,7 @@ try:
 
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось создать файл "Contract data": \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to create file "Contract data": \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -306,15 +309,15 @@ fname = cnr+'_кв'+apnr+'_'+cname
 
 # Check if the same folder already exists
  # Create choises
-ch1 = 'Да'
-ch2 = 'Нет, попробовать еще раз'
-ch3 = 'Нет, остановить выполнение программы'
+ch1 = 'Yes'
+ch2 = 'No, try again'
+ch3 = 'No, stop program execution'
 ch = ch2 
  # Check for choise     
 while ch == ch2:
     if os.path.isdir(os.getcwd() + '/{}'.format(fname)):
         beep(4)
-        q = easygui.buttonbox('Папка с таким названием уже существует, хотите ее заменить?', 'Внимание!!!', (ch1, ch2, ch3))
+        q = easygui.buttonbox('A folder with the same name already exists, do you want to replace it?', 'Attention!!!', (ch1, ch2, ch3))
         if q == ch1:
             ch = ch1
             shutil.rmtree(os.getcwd() + '/{}'.format(fname))
@@ -355,7 +358,7 @@ try:
 
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось сохранить файл "Contract data": \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to save file "Contract data": \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -371,7 +374,7 @@ try:
     
 except BaseException  as e:
     beep(4)
-    easygui.msgbox('Не удалось сохранить файл "Contract": \n' + str(e), title='Ошибка!')
+    easygui.msgbox('Failed to save file "Contract": \n' + str(e), title='Error!')
     logger.error(str(e))
     sys.exit()
 
@@ -387,6 +390,6 @@ if data['Значение'][8] > 0:
 # In[ ]:
 
 
-print(wname + ' составлен!')
+print(wname + ' has been drawn up!')
 time.sleep(3)
 
