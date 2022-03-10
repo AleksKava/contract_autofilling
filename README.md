@@ -1,5 +1,5 @@
 # contract_autofilling
-## Import excel data to word template using python and python-docx
+## Importing excel data to word template using python and python-docx
 
 This program was created to simplify the filling of standard agreements.
 
